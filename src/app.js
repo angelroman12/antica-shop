@@ -12,6 +12,17 @@ contactBtn.addEventListener('click', (e) => {
 	contactForm.scrollIntoView({behavior: 'smooth'})
 })
 
+const animatieDiv = document.getElementById('animatie');
+const navbarBtn = document.getElementById('navbar-btn');
+
+navbarBtn.addEventListener('click', (e) => {
+	e.preventDefault();
+	animatieDiv.scrollIntoView({behavior: 'smooth'})
+})
+
+//  Filter buttons functions 
+
+
 function allBooksFunc () {
 	output.innerHTML = ''
 	http.get("https://6086e5aea3b9c200173b7295.mockapi.io/products")
@@ -23,34 +34,14 @@ function getProducts() {
 		.then((data) => ui.showProducts(data));
 }
 
-// let searchInput =document.getElementById('search').addEventListener('change', () => {
-// 	output.innerHTML = ''
-// 	http
-// 	.get("https://6086e5aea3b9c200173b7295.mockapi.io/products")
-// 	.then((data) => uiFilter.find(data))
-// })
 let searchInput =document.getElementById('search').addEventListener('change', () => {
 	output.innerHTML = ''
 	http
 	.get("https://6086e5aea3b9c200173b7295.mockapi.io/products")
 	.then((data) => uiFilter.findFilter(data))
 })
-
-// let inStoc = document.getElementById('inStoc').addEventListener('click', () => {
-// 	output.innerHTML = ''
-// 	http
-// 	.get("https://6086e5aea3b9c200173b7295.mockapi.io/products")
-// 	.then((data) => uiFilter.stock(data))
-// })
-
 let btn = document.querySelector('#fil')
 
-// btn.addEventListener('click', ()=> {
-// 	output.innerHTML = ''
-// 	http
-// 	.get("https://6086e5aea3b9c200173b7295.mockapi.io/products")
-// 	.then((data) => uiFilter.cheap(data))
-// })
 
 const copertaBrosata = document.getElementById('copertaBrosata').addEventListener('click', () => {
 	output.innerHTML = ''
@@ -93,6 +84,8 @@ let filter51 = document.getElementById('51').addEventListener('click', () => {
 	.then((data) => uiFilter.cheap51(data))
 })
 
+
+//  Filter buttons 
 const pretFilterBtn = document.getElementById('pret-filter-btn');
 const pretDiv = document.querySelector('.pret-btn');
 pretFilterBtn.addEventListener('click', showFilterBtn);
@@ -119,6 +112,7 @@ function showCover() {
 	coverDiv.classList.toggle('display-none');
 }
 
+//  Footer Year
 const year = document.getElementById('year')
 const currentYear = new Date().getFullYear()
 year.innerHTML = currentYear
