@@ -20,6 +20,13 @@ navbarBtn.addEventListener('click', (e) => {
 	animatieDiv.scrollIntoView({behavior: 'smooth'})
 })
 
+const main = document.getElementById('main');
+const headerBtn = document.getElementById('header-btn')
+
+headerBtn.addEventListener('click', (e) => {
+	main.scrollIntoView({behavior: "smooth"})
+})
+
 //  Filter buttons functions 
 
 

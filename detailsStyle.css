@@ -122,3 +122,8 @@ span {
     display: flex;
     align-items: center;
 }
+
+.align-center {
+    display: flex;
+    align-items: center;
+}
