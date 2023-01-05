@@ -95,9 +95,12 @@ class UIfilter {
    });
 	}
 	// find(products){
-	//  	let bookTitle =	products.find(product => product.title === this.searchInput.value)
+
+	// 	let stringInputValue = this.searchInput.value;
+	// 	let convertString = stringInputValue.toLowerCase();
+	//  	let bookTitle =	products.find(product => product === convertString)
+	// 	// let stringBooktitle = new String(bookTitle).toLocaleUpperCase()
 	// 	let myArray = []
-	// 	console.log(bookTitle)
 	// 	let output = ''
 	// 	myArray.push(bookTitle)
 	// 	myArray.map((product) => {
@@ -110,20 +113,34 @@ class UIfilter {
 	// 		<p>${product.price} ${product.curency} </p> 
 	// 		<a href="details.html?id=${product.id}"> <button class="det add-cart"> Detalii</button> </a>					
 	// 		</div>            
-	// 	   `;
-	// 	this.productsDiv.innerHTML += output;
+	// 		`;
+	// 		this.productsDiv.innerHTML += output;
+	// 		console.log(stringInputValue)
 	// 	})
 	// }
 	findFilter(products) {
-		let authors = products.filter(autor => autor.author === this.searchInput.value || autor.title === this.searchInput.value)	
+		const newString = this.searchInput.value;
+		const firstName = newString[0].split('');
+		const sliced = firstName.slice(1).join('');
+		const firstBigLetter = firstName[0].toUpperCase();
+		const complateName = firstBigLetter + sliced
+
+		const secondName = newString[1].split('');
+		const secondSlice = secondName.slice(1).join("");
+		const secondBigLetter = secondName[0].toUpperCase();
+		const complateSecondName = secondBigLetter + secondSlice;
+
+		const fullName = complateName +  + complateSecondName;
+
+		let authors = products.filter(autor => autor.author === fullName )	
 		if(authors){
 		let output = '';
 		authors.forEach((product) => {
 			output =
 			this.returnCard(product)
 			this.productsDiv.innerHTML += output;
-		this.neexistent.style.display = 'flex'
 		});
+		console.log(fullName)
 	}
 	}
 

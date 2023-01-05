@@ -123,3 +123,30 @@ function showCover() {
 const year = document.getElementById('year')
 const currentYear = new Date().getFullYear()
 year.innerHTML = currentYear
+
+
+// const myString = 'ken follet'
+// const lowerString = myString.split(' ');
+
+// console.log(lowerString)
+// console.log(lowerString[0].split('')[0].toLocaleUpperCase())
+// console.log(lowerString[1])
+
+function convertString(givenString) {
+	const newString = givenString.split(" ");
+
+
+	const firstName = newString[0].split('');
+	const sliced = firstName.slice(1).join('');
+	const firstBigLetter = firstName[0].toUpperCase();
+	const complateName = firstBigLetter + sliced
+
+	const secondName = newString[1].split('');
+	const secondSlice = secondName.slice(1).join("");
+	const secondBigLetter = secondName[0].toUpperCase();
+	const complateSecondName = secondBigLetter + secondSlice;
+	const fullName = complateName + ' ' + complateSecondName;
+	return fullName;
+} 
+
+// console.log(convertString('ken follet'))
