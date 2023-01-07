@@ -121,7 +121,7 @@ ul {
   padding-top: 5rem;
 }
 
-.pret-btn, .category-btn, .cover-btn {
+.pret-btn, .category-btn, .cover-btn, .varsta-btn {
     
     display: flex;
     flex-direction: column;
