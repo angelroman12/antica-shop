@@ -75,7 +75,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 16rem;
+    height: 70%;
     padding: 2rem;
     box-shadow: 0px 10px 10px 0 rgba(0, 0, 0, 0.1);
 }
